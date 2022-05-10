@@ -1,39 +1,34 @@
 import numpy as np
-
-class ExcepcionRadioCirculo(Exception):
-
-	def __init__(self,circulo,mensaje):
-		super(ExcepcionRadioCirculo,self).__init__(mensaje)
+import doctest
 
 
-class Circulo():
-	def __init__(self,radio):
-			
-		try:
-			if radio<=0:
-				raise ExcepcionRadioCirculo(self,'El radio no puede ser <=0')
-			self.__radio=radio
-		except ExcepcionRadioCirculo as e:
-			print(e)
-
-	def get_radio():
-		return self.__radio
+class Circle():
+	def __init__(self,radius):
+		if radius<=0:
+			raise ValueError("The radius cannot be: {}".format(radius))
+		self.__radius=radius
+	def get_radius():
+		return self.__radius
 
 	def get_area():
-		return np.pi()*(self.__radio**2)
+		return np.pi()*(self.__radius**2)
 
-	def get_perimetro():
-		return (2*np.pi())*self.__radio
+	def get_perimeter():
+		return (2*np.pi())*self.__radius
 
-	def set_radio(radio):
-		self.__radio=radio
+	def set_radius(radius):
+		if radius<=0:
+			raise ValueError("The radius cannot be: {}".format(radius))
+		self.__radius=radius
 	
-	def multiplicar_circulo(circulo,valor):
-		nuevo_circulo=Circulo(circulo.set_radio()*valor)
+	def circle_multiplication(circle,radius):
+		if value<=0:
+			raise ValueError("The radius cannot be: {}".format(radius))
+		new_circle=Circle(circle.set_radius()*value)
 
-		return nuevo_circulo
+		return new_circle
 
 if __name__=="__main__":
 
-	mi_circulo=Circulo(-3)
+	my_circle=Circle(3)
 
