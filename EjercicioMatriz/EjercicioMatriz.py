@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
 	print("-Original Matrix-\n")
 
-	print(np.transpose(matrix))
+	print((matrix))
 
 	found_initial_position=0
 	found_final_position=0
